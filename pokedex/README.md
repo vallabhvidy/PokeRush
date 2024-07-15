@@ -1,3 +1,3 @@
-# pokedex
+# digidex
 
 A new Flutter project.

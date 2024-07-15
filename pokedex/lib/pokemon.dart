@@ -2,6 +2,9 @@ class Pokemon {
   String? name;
   int? id;
   String? img;
+  String? ability;
+  int? height;
+  int? weight;
 
   Pokemon.fromJson(Map<String, dynamic> data)
     : id = data['id'],
