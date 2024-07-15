@@ -67,6 +67,38 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  freezed_annotation:
+    dependency: transitive
+    description:
+      name: freezed_annotation
+      sha256: f9f6597ac43cc262fa7d7f2e65259a6060c23a560525d1f2631be374540f2a9b
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.4.3"
+  http:
+    dependency: transitive
+    description:
+      name: http
+      sha256: "5895291c13fa8a3bd82e76d5627f69e0d85ca6a30dcac95c4ea19a5d555879c2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.13.6"
+  http_parser:
+    dependency: transitive
+    description:
+      name: http_parser
+      sha256: "2aa08ce0341cc9b354a498388e30986515406668dbcc4f7c950c3e715496693b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.0.2"
+  json_annotation:
+    dependency: transitive
+    description:
+      name: json_annotation
+      sha256: "1ce844379ca14835a50d2f019a3099f419082cfdd231cd86a142af94dd5c6bb1"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.9.0"
   leak_tracker:
     dependency: transitive
     description:
@@ -139,6 +171,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.0"
+  pokedex:
+    dependency: "direct main"
+    description:
+      name: pokedex
+      sha256: "360ccb4f2a67685ed3b9cc0ec35a90232a9f4db99a402c86b495ca338303c63e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.0"
   provider:
     dependency: "direct main"
     description:
@@ -200,6 +240,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.0"
+  typed_data:
+    dependency: transitive
+    description:
+      name: typed_data
+      sha256: facc8d6582f16042dd49f2463ff1bd6e2c9ef9f3d5da3d9b087e244a7b564b3c
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.3.2"
   vector_math:
     dependency: transitive
     description:
