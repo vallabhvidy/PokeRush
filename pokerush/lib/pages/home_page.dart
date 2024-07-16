@@ -6,16 +6,6 @@ import 'package:provider/provider.dart';
 class HomePage extends StatelessWidget {
   HomePage({super.key});
 
-  List<PokemonSpecies> pokemons = [];
-
-  Future getPokemons() async {
-    var dex = Pokedex();
-    for (int i=0; i < 10; i++) {
-      pokemons.add(await dex.pokemonSpecies.get(id: i+1));
-      print(pokemons[i].toString());
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,17 +24,20 @@ class HomePage extends StatelessWidget {
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search)), SizedBox(width: 11)],
       ),
       drawer: Drawer(),
-      body: FutureBuilder(future: getPokemons(),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.done) {
+      body: Consumer<PokeService>(builder:(context, poke, child) {
+        Provider.of<PokeService>(context, listen: false).getPokemons();
+        if (poke.isLoading) {
+          return CircularProgressIndicator();
+        } else {
           return ListView.builder(
             itemCount: 10,
             itemBuilder:(context, index) {
-            return ListTile(title: Text(pokemons[index].name),);
-          },);
-        } else {
-          return CircularProgressIndicator();
-        }},),
+              return ListTile(
+                leading: CircleAvatar(backgroundImage: NetworkImage(poke.pokemons[index].img),),
+                title: Text(poke.pokemons[index].name));
+            },);
+        }
+      },),
     );
   }
 }
