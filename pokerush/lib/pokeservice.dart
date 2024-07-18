@@ -73,10 +73,11 @@ class PokeService extends ChangeNotifier{
   void loadPokemon(int id) async {
     isLoadingPokemon = true;
     notifyListeners();
-  bool result = await InternetConnectionCheckerPlus().hasConnection;
+    bool result = await InternetConnectionCheckerPlus().hasConnection;
     if (result) {
-      final pokedex = Pokedex();
+      final pokedex = dex.Pokedex();
       currentPokemon = await pokedex.pokemonSpecies.get(id: id);
+      currPokemon = await pokedex.pokemon.get(id: id);
       isLoadingPokemon = false;
       notifyListeners();
     } else {

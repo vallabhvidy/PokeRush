@@ -12,7 +12,7 @@ class PokeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    return Scaffol
+    return Scaffold(
     backgroundColor: Colors.grey[300],
       appBar: AppBar(
         title: Text(pokemon.name,
@@ -45,7 +45,7 @@ class PokeScreen extends StatelessWidget {
           } else {
             return ListView(
               children: [
-                Expanded(
+                Flexible(
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: CachedNetworkImage(imageUrl: pokemon.img),
