@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:pokedex/pokedex.dart';
+import 'package:pokedex/pokedex.dart' as dex;
 import 'package:http/http.dart' as http;
 
 class Pokemon {
@@ -28,13 +28,14 @@ class Pokemon {
 class PokeService extends ChangeNotifier{
   bool isLoading = true;
   bool isLoadingPokemon = false;
-  PokemonSpecies? currentPokemon;
+  dex.PokemonSpecies? currentPokemon;
+  dex.Pokemon? currPokemon;
   List<Pokemon> pokemons = [];
   List<Pokemon> favorite = [];
   List<Pokemon> caught = [];
 
   void getPokemons() async {
-    var response = await http.get(Uri.parse("https://pokeapi.co/api/v2/pokemon?limit=-1"));
+    var response = await http.get(Uri.parse("https://pokeapi.co/api/v2/pokemon?limit=1000"));
     List<Map<String, dynamic>> data = List.from(jsonDecode(response.body)['results']);
     pokemons = data.asMap().entries.map<Pokemon>((element) {
                 element.value['id'] = element.key + 1;
@@ -60,10 +61,12 @@ class PokeService extends ChangeNotifier{
     isLoadingPokemon = true;
     notifyListeners();
 
-    final pokedex = Pokedex();
-    PokemonSpecies poke = await pokedex.pokemonSpecies.get(id: id);
+    final pokedex = dex.Pokedex();
+    dex.PokemonSpecies poke = await pokedex.pokemonSpecies.get(id: id);
     print(poke.flavorTextEntries.first.flavorText);
     currentPokemon = poke;
+    final curr = await pokedex.pokemon.get(id: id);
+    currPokemon = curr;
     // var response = await http.get(Uri.parse("https://pokeapi.co/api/v2/pokemon-species/$id"));
     // Map<String, dynamic> data = jsonDecode(response.body);
     // currentPokemon!.id = data['id'];
