@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:pokedex/pokedex.dart';
+import 'package:pokedex/pokedex.dart' as dex;
 import 'package:http/http.dart' as http;
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 
@@ -31,7 +31,8 @@ class PokeService extends ChangeNotifier{
   bool pokemonLoaded = false;
   bool isLoading = true;
   bool isLoadingPokemon = false;
-  PokemonSpecies? currentPokemon;
+  dex.PokemonSpecies? currentPokemon;
+  dex.Pokemon? currPokemon;
   List<Pokemon> pokemons = [];
   List<Pokemon> favourites = [];
   List<Pokemon> allPokemons = [];
@@ -56,6 +57,7 @@ class PokeService extends ChangeNotifier{
       internet = false;
       notifyListeners();
     }
+
   }  
 
   // void loadPokemon(int id) async {
@@ -97,9 +99,9 @@ class PokeService extends ChangeNotifier{
     }
     notifyListeners();
   }
-
   void addToFavourites() {
     favourites.add(allPokemons[currentPokemon!.id - 1]);
+
     notifyListeners();
   }
 }
