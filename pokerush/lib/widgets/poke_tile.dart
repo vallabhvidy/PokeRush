@@ -10,20 +10,20 @@ class PokeTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       borderOnForeground: true,      
-      margin: EdgeInsets.all(2.0),
+      margin: const EdgeInsets.all(2.0),
       shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(2.0)),
       child: Row(
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(8.0), topLeft: Radius.circular(8.0)),
+            borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(8.0), topLeft: Radius.circular(8.0)),
             child: CachedNetworkImage(
               imageUrl: pokemon.img,
               height: 100,
             ),
           ),
-          SizedBox(width: 20,),
-          Text(pokemon.name, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50,),),
-          SizedBox(width: 20,),
+          const SizedBox(width: 20,),
+          Text(pokemon.name, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 50,),),
+          const SizedBox(width: 20,),
         ],
       )
     );
