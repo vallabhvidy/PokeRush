@@ -73,11 +73,11 @@ class HomePage extends StatelessWidget {
             return Column(children: [
               const SizedBox(height: 10,),
               Padding(
-                padding: const EdgeInsets.all(15.0),
+                padding: const EdgeInsets.all(4.0),  // 8
                 child: SearchBar(
                   elevation: const WidgetStatePropertyAll(1),
                   leading: const Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(8.0),       // 8
                     child: Icon(Icons.search_rounded),
                   ),
                   onChanged: (value) => poke.runSearch(value),
@@ -130,6 +130,7 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
+              SizedBox(height: 4),
               // Row(
               //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               //   children: [
@@ -171,7 +172,7 @@ class HomePage extends StatelessWidget {
               children: [
                 Expanded(
                   child: GridView.builder(gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 6.0, crossAxisSpacing: 6.0), 
-                    padding: const EdgeInsets.all(12.0),
+                    padding: const EdgeInsets.all(12.0),      // 12
                     scrollDirection: Axis.vertical,
                     itemCount: poke.pokemons.length,
                     itemBuilder: (context, index) {
