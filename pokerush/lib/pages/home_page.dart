@@ -73,7 +73,7 @@ class HomePage extends StatelessWidget {
             return Column(children: [
               const SizedBox(height: 10,),
               Padding(
-                padding: const EdgeInsets.all(4.0),  // 8
+                padding: const EdgeInsets.symmetric(horizontal: 15),  // 8
                 child: SearchBar(
                   elevation: const WidgetStatePropertyAll(1),
                   leading: const Padding(
@@ -83,6 +83,7 @@ class HomePage extends StatelessWidget {
                   onChanged: (value) => poke.runSearch(value),
                 ),
               ),
+              SizedBox(height: 8,),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 padding: EdgeInsets.symmetric(horizontal: 15.0),
@@ -130,7 +131,7 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 4),
+              SizedBox(height: 8),
               // Row(
               //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               //   children: [
