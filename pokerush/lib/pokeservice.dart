@@ -183,7 +183,7 @@ class PokeService extends ChangeNotifier{
   }
 
   void filterColor() async {
-    pokemons = allPokemons;
+    List<Pokemon> list = pokemons;
     bool result = await InternetConnectionCheckerPlus().hasConnection;
     if (result) {
       if (colorvalue != "all colors") {
@@ -194,7 +194,9 @@ class PokeService extends ChangeNotifier{
           var strid = i['url'].toString().substring(42).replaceAll(new RegExp(r'[^0-9]'),'');
           var id = int.parse(strid);
           if (id > 1000) break;
-          byColor.add(pokemons[id-1]);
+          if (pokemons.contains(allPokemons[id-1])) {
+            byColor.add(allPokemons[id-1]);
+          }
         }
         pokemons = byColor;
         notifyListeners();
@@ -221,12 +223,14 @@ class PokeService extends ChangeNotifier{
           var strid = i['url'].toString().substring(42).replaceAll(new RegExp(r'[^0-9]'),'');
           var id = int.parse(strid);
           if (id > 1000) break;
-          byGen.add(allPokemons[id-1]);
+          if (pokemons.contains(allPokemons[id-1])) {
+            byGen.add(allPokemons[id-1]);
+          }
         }
         pokemons = byGen;
         notifyListeners();
       } else {
-        pokemons = list;
+        pokemons = allPokemons;
         notifyListeners();
       }
     } else {
@@ -249,12 +253,14 @@ class PokeService extends ChangeNotifier{
           var strid = i['pokemon']['url'].toString().substring(32).replaceAll(new RegExp(r'[^0-9]'),'');
           var id = int.parse(strid);
           if (id > 1000) break;
-          byType.add(allPokemons[id-1]);
+          if (pokemons.contains(allPokemons[id-1])) {
+            byType.add(allPokemons[id-1]);
+          }
         }
         pokemons = byType;
         notifyListeners();
       } else {
-        pokemons = list;
+        pokemons = allPokemons;
         notifyListeners();
       }
     } else {
