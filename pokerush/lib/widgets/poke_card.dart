@@ -29,9 +29,12 @@ class PokeCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Flexible(
-              child: ClipRRect(
-                borderRadius: const BorderRadius.only(topLeft: Radius.circular(8.0), topRight: Radius.circular(8.0)),
-                child: CachedNetworkImage(imageUrl: pokemon.img, ),
+              child: Hero(
+                tag: pokemon.img,
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.only(topLeft: Radius.circular(8.0), topRight: Radius.circular(8.0)),
+                  child: CachedNetworkImage(imageUrl: pokemon.img, ),
+                ),
               ),
             ),
             Text("${pokemon.name[0].toUpperCase()}${pokemon.name.substring(1).toLowerCase()}",

@@ -28,7 +28,7 @@ class FavouritesPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Flexible(child: Image.asset("lib/images/EmptyBox.png", height: 225,)),
-                Padding(padding: EdgeInsets.all(8.0), child: Text("E M P T Y", style: TextStyle(fontSize: 24, color: Colors.grey)),)
+                const Padding(padding: EdgeInsets.all(8.0), child: Text("E M P T Y", style: TextStyle(fontSize: 24, color: Colors.grey)),)
               ],
             ),
           );
