@@ -28,7 +28,10 @@ class PokeScreen extends StatelessWidget {
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: IconButton(onPressed: () {}, icon: Icon(Provider.of<PokeService>(context).icon)),
+            child: IconButton(onPressed: () {
+              Provider.of<PokeService>(context, listen: false).toggleFavourite(pokemon.id);
+            }, 
+            icon: Icon(Provider.of<PokeService>(context).favouritesIcon(pokemon.id))),
           )
         ],
         backgroundColor: Colors.transparent,

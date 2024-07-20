@@ -269,4 +269,21 @@ class PokeService extends ChangeNotifier{
     }
 
   }
+
+  void toggleFavourite(int id) {
+    if (favourites.contains(allPokemons[id-1])) {
+      favourites.remove(allPokemons[id-1]);
+    } else {
+      favourites.add(allPokemons[id-1]);
+    }
+    notifyListeners();
+  }
+
+  IconData favouritesIcon(int id) {
+    if (favourites.contains(allPokemons[id-1])) {
+      return Icons.favorite;
+    } else {
+      return Icons.favorite_border;
+    }
+  }
 }
