@@ -1,5 +1,7 @@
 import 'dart:convert';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:pokedex/pokedex.dart' as dex;
 import 'package:http/http.dart' as http;
 
@@ -26,6 +28,7 @@ class Pokemon {
 // }
 
 class PokeService extends ChangeNotifier{
+  IconData icon = Icons.favorite_border;
   bool isLoading = true;
   bool isLoadingPokemon = false;
   dex.PokemonSpecies? currentPokemon;
@@ -60,20 +63,12 @@ class PokeService extends ChangeNotifier{
   void loadPokemon(int id) async {
     isLoadingPokemon = true;
     notifyListeners();
-
     final pokedex = dex.Pokedex();
     dex.PokemonSpecies poke = await pokedex.pokemonSpecies.get(id: id);
-    print(poke.flavorTextEntries.first.flavorText);
     currentPokemon = poke;
     final curr = await pokedex.pokemon.get(id: id);
     currPokemon = curr;
-    // var response = await http.get(Uri.parse("https://pokeapi.co/api/v2/pokemon-species/$id"));
-    // Map<String, dynamic> data = jsonDecode(response.body);
-    // currentPokemon!.id = data['id'];
-    // currentPokemon!.name = data['name'];
-    // currentPokemon!.capture_rate = data['capture_rate'];
-    // currentPokemon!.base_happiness = data['base_happiness'];
-    // // currentPokemon!.description = 
+    print(curr.height);
     isLoadingPokemon = false;
     notifyListeners();
   }

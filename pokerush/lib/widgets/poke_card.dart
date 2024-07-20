@@ -6,7 +6,9 @@ import 'package:provider/provider.dart';
 
 class PokeCard extends StatelessWidget {
   final Pokemon pokemon;
-  const PokeCard({super.key, required this.pokemon});
+  // TextStyle monospace = TextStyle(fontFamily: "monospace",
+  // fontFamilyFallback: <String>["Courier"], fontSize: 15, fontWeight: FontWeight.bold);
+  PokeCard({super.key, required this.pokemon});
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +37,12 @@ class PokeCard extends StatelessWidget {
               ),
             ),
             Text("${pokemon.name[0].toUpperCase()}${pokemon.name.substring(1).toLowerCase()}",
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
+
               ),
+              
             ),
             const SizedBox(height: 6,)
           ],

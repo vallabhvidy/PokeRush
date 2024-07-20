@@ -4,6 +4,7 @@ import 'package:pokerush/widgets/poke_card.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
+  
   const HomePage({super.key});
 
   @override
