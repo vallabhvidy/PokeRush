@@ -101,7 +101,7 @@ class PokeScreen extends StatelessWidget {
                           children:[
 
                             Container(
-                              width: width * 0.5,
+                              width: width * 0.46,
                               child: Text("Name",
 
                               style: TextStyle(
@@ -115,7 +115,7 @@ class PokeScreen extends StatelessWidget {
                             Container(
                               width : width * 0.35,
                               child: Text("${pokemon.name[0].toUpperCase()}${pokemon.name.substring(1).toLowerCase()}",
-                              style: monospace
+                              style: monospace,
 
                             ),),
                           ],
@@ -129,7 +129,7 @@ class PokeScreen extends StatelessWidget {
                           children:[
 
                             Container(
-                              width: width * 0.5,
+                              width: width * 0.46,
                               child: Text("Happiness",
 
                               style: TextStyle(
@@ -157,7 +157,7 @@ class PokeScreen extends StatelessWidget {
                           children:[
 
                             Container(
-                              width: width * 0.5,
+                              width: width * 0.46,
                               child: Text("Color",
 
                               style: TextStyle(
@@ -185,7 +185,7 @@ class PokeScreen extends StatelessWidget {
                           children:[
 
                             Container(
-                              width: width * 0.5,
+                              width: width * 0.46,
                               child: Text("ID",
 
                               style: TextStyle(
@@ -213,7 +213,7 @@ class PokeScreen extends StatelessWidget {
                           children:[
 
                             Container(
-                              width: width * 0.5,
+                              width: width * 0.46,
                               child: Text("Generation",
 
                               style: TextStyle(
@@ -241,7 +241,7 @@ class PokeScreen extends StatelessWidget {
                           children:[
 
                             Container(
-                              width: width * 0.5,
+                              width: width * 0.46,
                               child: Text("Height",
 
                               style: TextStyle(
@@ -253,9 +253,9 @@ class PokeScreen extends StatelessWidget {
                             ),
 
                             Container(
-                              width : width * 0.3,
+                              width : width * 0.35,
                               child: Text((value.currPokemon!.height*10).toString()+" cm",
-                              style: monospace
+                              style: monospace,
                             ),),
 
                           ],
@@ -269,7 +269,7 @@ class PokeScreen extends StatelessWidget {
                           children:[
 
                             Container(
-                              width: width * 0.5,
+                              width: width * 0.46,
                               child: Text("Weight",
 
                               style: TextStyle(
@@ -280,25 +280,23 @@ class PokeScreen extends StatelessWidget {
                               ),
                             ),
 
-                            // Container(                     
-                            //   width : width * 0.3,
-                            //   child: Text((value.currPokemon!.weight/10).toString()+" kg",
-                            //   style: TextStyle(
-                            //     color:Colors.black,fontSize: 21,fontWeight: FontWeight.bold,
-                            //   ),
-                            // ),),
-
-                            SizedBox(
-                              width : width * 0.3,
-                              child: Text("${value.currPokemon!.weight/10} kg",
-                              style:monospace
+                            Container(                     
+                              width : width * 0.35,
+                              child: Text((value.currPokemon!.weight/10).toString()+" kg",
+                              style: monospace,
                             ),),
+
+                            // SizedBox(
+                            //   width : width * 0.3,
+                            //   child: Text("${value.currPokemon!.weight/10} kg",
+                            //   style:monospace
+                            // ),),
 
                           ],
                         ),
                       ),
                       
-                      SizedBox(height:1),
+                      SizedBox(height:4),
 
                       MyButton(
                         onTap: () {} 
