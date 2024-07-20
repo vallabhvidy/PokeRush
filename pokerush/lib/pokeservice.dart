@@ -1,5 +1,7 @@
 import 'dart:convert';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:pokedex/pokedex.dart' as dex;
 import 'package:http/http.dart' as http;
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
@@ -27,8 +29,12 @@ class Pokemon {
 // }
 
 class PokeService extends ChangeNotifier{
+
+  IconData icon = Icons.favorite_border;
+
   bool internet = true;
   bool pokemonLoaded = false;
+
   bool isLoading = true;
   bool isLoadingPokemon = false;
   dex.PokemonSpecies? currentPokemon;
@@ -141,6 +147,7 @@ class PokeService extends ChangeNotifier{
   void loadPokemon(int id) async {
     isLoadingPokemon = true;
     notifyListeners();
+
     bool result = await InternetConnectionCheckerPlus().hasConnection;
     if (result) {
       final pokedex = dex.Pokedex();
@@ -156,6 +163,7 @@ class PokeService extends ChangeNotifier{
 
   void toggleSearch() {
     showSearchBar = !showSearchBar;
+
     notifyListeners();
   }
 
