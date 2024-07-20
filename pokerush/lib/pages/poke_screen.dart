@@ -7,8 +7,8 @@ import 'package:pokerush/widgets/poke_button.dart';
 
 class PokeScreen extends StatelessWidget {
 
-  Pokemon pokemon;
-  TextStyle monospace = TextStyle(fontFamily: "monospace",
+  final Pokemon pokemon;
+  final TextStyle monospace = TextStyle(fontFamily: "monospace",
   fontFamilyFallback: <String>["Courier"], fontSize: 22, fontWeight: FontWeight.bold);
   PokeScreen({super.key, required this.pokemon});
 
@@ -64,10 +64,13 @@ class PokeScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.asset('lib/images/pokeball.png', color: Colors.grey[400],),
                     ),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(8.0),
-                    
-                      child: CachedNetworkImage(imageUrl: pokemon.img),
+                    Hero(
+                      tag: pokemon.img,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
+                      
+                        child: CachedNetworkImage(imageUrl: pokemon.img),
+                      ),
                     ),
                     ]
 
@@ -249,13 +252,11 @@ class PokeScreen extends StatelessWidget {
                               ),
                             ),
 
-                            // Container(
-                            //   width : width * 0.3,
-                            //   child: Text((value.currPokemon!.height*10).toString()+" cm",
-                            //   style: TextStyle(
-                            //     color:Colors.black,fontSize: 21,fontWeight: FontWeight.bold,
-                            //   ),
-                            // ),),
+                            Container(
+                              width : width * 0.3,
+                              child: Text((value.currPokemon!.height*10).toString()+" cm",
+                              style: monospace
+                            ),),
 
                           ],
                         ),
@@ -290,9 +291,7 @@ class PokeScreen extends StatelessWidget {
                             SizedBox(
                               width : width * 0.3,
                               child: Text("${value.currPokemon!.weight/10} kg",
-                              style: const TextStyle(
-                                color:Colors.black,fontSize: 21,fontWeight: FontWeight.bold,
-                              ),
+                              style:monospace
                             ),),
 
                           ],
