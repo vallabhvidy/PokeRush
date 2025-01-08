@@ -13,9 +13,9 @@ A simple pokeDex for Android.
 
 ## Screenshots
 
-| <img title="" src="" alt="" width="330" align="center"> | <img title="" src="" alt="" width="330" align="center"> | <img title="" src="" alt="" width="330" align="center"> |
+| <img title="" src="/pokeRush/pokerush/data/img1" alt="" width="330" align="center"> | <img title="" src="/pokeRush/pokerush/data/img2" alt="" width="330" align="center"> | <img title="" src="/pokeRush/pokerush/data/img3" alt="" width="330" align="center"> |
 |:-------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------:|
 
-| <img title="" src="" alt="" width="330" align="center"> | <img title="" src="" alt="" width="330" align="center"> | <img title="" src="" alt="" width="330" align="center"> |
+| <img title="" src="/pokeRush/pokerush/data/img4" alt="" width="330" align="center"> | <img title="" src="/pokeRush/pokerush/data/img5" alt="" width="330" align="center"> | <img title="" src="/pokeRush/pokerush/data/img6" alt="" width="330" align="center"> |
 |:-------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------:|
 
